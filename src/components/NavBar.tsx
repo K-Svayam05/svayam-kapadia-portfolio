@@ -64,7 +64,7 @@ const NavBar = () => {
           
           {/* Resume button */}
           <a 
-            href="https://drive.google.com/file/d/1WyYuOdFVwTEgYV5CtvSW7vVB3-X_Fs7a/view?usp=sharing"
+            href="https://drive.google.com/uc?export=download&id=13H3kVnyFOxSUw2KOo78LW6DxLVCEUNVV"
             target="_blank"
             rel="noopener noreferrer"
             className="interactive-element px-4 py-2 border border-neon-blue text-neon-blue rounded hover:bg-neon-blue/10 transition-all duration-300 font-sans"
@@ -115,7 +115,7 @@ const NavBar = () => {
             ))}
             
             <a 
-              href="https://drive.google.com/file/d/1WyYuOdFVwTEgYV5CtvSW7vVB3-X_Fs7a/view?usp=sharing" 
+              href="https://drive.google.com/uc?export=download&id=13H3kVnyFOxSUw2KOo78LW6DxLVCEUNVV" 
               target="_blank"
               rel="noopener noreferrer"
               className="interactive-element mt-4 block text-center px-4 py-2 border border-neon-blue text-neon-blue rounded hover:bg-neon-blue/10 transition-all duration-300 font-sans"
