@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Menu } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -62,15 +68,34 @@ const NavBar = () => {
             </a>
           ))}
           
-          {/* Resume button */}
-          <a 
-            href="https://drive.google.com/uc?export=download&id=13H3kVnyFOxSUw2KOo78LW6DxLVCEUNVV"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="interactive-element px-4 py-2 border border-neon-blue text-neon-blue rounded hover:bg-neon-blue/10 transition-all duration-300 font-sans"
-          >
-            Resume
-          </a>
+          {/* Resume dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="interactive-element px-4 py-2 border border-neon-blue text-neon-blue rounded hover:bg-neon-blue/10 transition-all duration-300 font-sans flex items-center gap-1">
+              Resume <ChevronDown className="w-4 h-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-tech-800/95 backdrop-blur-md border-neon-blue/30">
+              <DropdownMenuItem asChild>
+                <a 
+                  href="https://drive.google.com/file/d/1uqmrHSmFx5B9jYL-ne-cA9YfUHo7svJX/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white cursor-pointer"
+                >
+                  Software Engineer
+                </a>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <a 
+                  href="https://drive.google.com/file/d/14ShgDopO1KW1K8mFStmiwdGv-rlAqDY1/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white cursor-pointer"
+                >
+                  Quant Engineer
+                </a>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
         
         {/* Mobile Menu Button */}
@@ -114,14 +139,27 @@ const NavBar = () => {
               </a>
             ))}
             
-            <a 
-              href="https://drive.google.com/uc?export=download&id=13H3kVnyFOxSUw2KOo78LW6DxLVCEUNVV" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="interactive-element mt-4 block text-center px-4 py-2 border border-neon-blue text-neon-blue rounded hover:bg-neon-blue/10 transition-all duration-300 font-sans"
-            >
-              Resume
-            </a>
+            <div className="mt-4 space-y-2">
+              <p className="text-gray-400 text-sm">Download Resume:</p>
+              <a 
+                href="https://drive.google.com/file/d/1uqmrHSmFx5B9jYL-ne-cA9YfUHo7svJX/view?usp=sharing" 
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={toggleMobileMenu}
+                className="interactive-element block text-center px-4 py-2 border border-neon-blue text-neon-blue rounded hover:bg-neon-blue/10 transition-all duration-300 font-sans"
+              >
+                Software Engineer
+              </a>
+              <a 
+                href="https://drive.google.com/file/d/14ShgDopO1KW1K8mFStmiwdGv-rlAqDY1/view?usp=sharing" 
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={toggleMobileMenu}
+                className="interactive-element block text-center px-4 py-2 border border-neon-purple text-neon-purple rounded hover:bg-neon-purple/10 transition-all duration-300 font-sans"
+              >
+                Quant Engineer
+              </a>
+            </div>
           </div>
         </div>
       </div>
