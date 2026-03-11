@@ -6,97 +6,67 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const ExperienceSection = () => {
   const experiences = [
     {
+      id: 'nasdaq',
+      title: 'Cloud Engineering Intern',
+      company: 'Nasdaq',
+      link: '#',
+      period: 'Jan. 2026 – Present',
+      location: 'Mumbai, India (Hybrid)',
+      description: [
+        'Completed 8 weeks of intensive cloud infrastructure training, mastering Oracle Cloud (OCI) and Kubernetes.',
+        'Worked with foundational Ansible and Git automation workflows to support Fortune 500 FinTech environments.',
+      ]
+    },
+    {
       id: 'nomura',
-      title: 'Chief Data Office Intern',
+      title: 'Software Development Engineering Intern',
       company: 'Nomura',
       link: '#',
-      period: 'June 2025 - Present',
+      period: 'Jun. 2025 – Dec. 2025',
       location: 'Mumbai, India',
+      badge: 'Pre-Placement Offer Received',
       description: [
-        'Specialized in data governance frameworks, implementing comprehensive policies that improved data quality by 35%.',
-        'Developed Python scripts for API calls with Alation and Marquez, automating data catalog management processes.',
-        'Created detailed data lineages mapping complex data flows across enterprise systems, enhancing data traceability by 40%.',
-        'Collaborated with cross-functional teams to establish data governance best practices and compliance standards.'
+        'Architected a Retrieval-Augmented Generation (RAG) chatbot leveraging internal LLM APIs, automating real-time metadata curation and reducing risk analysis turnaround time by 40%.',
+        'Designed a normalized SQL database schema for robust data lineage tracking, resolving 100% of data consistency bottlenecks across complex upstream and downstream dependencies.',
+        'Modernized legacy CI/CD pipelines via Jenkins and optimized Python automation scripts, slashing technical debt by 25% and accelerating pipeline execution runtime by 35%.',
       ]
     },
     {
-      id: 'billbox',
+      id: 'stealth',
       title: 'Software Development Intern',
-      company: 'Billbox AI',
-      link: 'https://billboxa.ai/',
-      period: 'Dec. 2024 - June 2025',
-      location: 'Remote',
-      description: [
-        'Built responsive UI with Framer, boosting mobile engagement by 25% and page speed by 30%.',
-        'Developed cross-platform UI, enhancing user retention by 15% through intuitive navigation and seamless UX.'
-      ]
-    },
-    {
-      id: 'goldman',
-      title: 'Software Engineering Virtual Intern',
-      company: 'Goldman Sachs',
-      link: 'https://drive.google.com/file/d/1WHSFPBoj-LLFX_wQf3ZEq-aJ2sGNtAaP/view',
-      period: 'July 2024 - Aug. 2024',
-      location: 'Virtual',
-      description: [
-        'Implemented cryptographic protocols, reducing system anomalies by 40% and ensuring OWASP compliance.',
-        'Optimized system architecture, improving security performance by 30% through advanced problem-solving.'
-      ]
-    },
-    {
-      id: 'nrg',
-      title: 'AI Market Research Extern',
-      company: 'National Research Group',
-      link: 'https://drive.google.com/file/d/1QuLFh2s7fucTwC0gP0Xl2v8tgRt2nHM-/view',
-      period: 'July 2024 - Aug. 2024',
-      location: 'Remote',
-      description: [
-        'Identified 10+ key policy influencers, shaping NRG\'s $5M R&D strategy and boosting market insights by 20%.',
-        'Synthesized research into actionable reports, cutting analysis time by 25% and enabling data-driven decisions.'
-      ]
-    },
-    {
-      id: 'gssoc',
-      title: 'Open Source Contributor',
-      company: 'GSSoC \'24',
+      company: 'Stealth Startup',
       link: '#',
-      period: 'May 2024 - Aug. 2024',
+      period: 'Dec. 2024 – Jun. 2025',
       location: 'Remote',
       description: [
-        'Contributed to 5+ open-source projects using React.js, Node.js, and MongoDB, improving code efficiency by 20%.',
-        'Resolved 15+ bugs, enhancing front-end features and boosting project usability by 25%.'
+        'Engineered scalable full-stack features utilizing modern web frameworks, boosting mobile user engagement by 25%.',
+        'Reduced frontend application load times by 15% through performance optimization and modern tooling.',
       ]
-    }
+    },
   ];
 
-  const [activeTab, setActiveTab] = useState('nomura');
-
-  const handleTabClick = (tabId: string) => {
-    setActiveTab(tabId);
-  };
+  const [activeTab, setActiveTab] = useState('nasdaq');
 
   return (
     <section id="experience" className="py-20 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-neon-purple/10 rounded-full filter blur-[100px] animate-pulse"></div>
+      <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-neon-gold/10 rounded-full filter blur-[100px] animate-pulse"></div>
       
       <div className="container mx-auto px-4">
         <div className="flex items-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-white font-sans">
-            <span className="text-neon-blue font-mono mr-2">02.</span> Where I've Worked
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground font-sans">
+            <span className="text-neon-emerald font-mono mr-2">02.</span> Where I've Worked
           </h2>
-          <div className="h-px bg-gradient-to-r from-neon-blue to-transparent flex-grow ml-4"></div>
+          <div className="h-px bg-gradient-to-r from-neon-emerald to-transparent flex-grow ml-4"></div>
         </div>
         
         <div className="max-w-4xl mx-auto">
-          <Tabs defaultValue="nomura" value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid md:grid-cols-5 grid-cols-2 gap-2 bg-tech-800/50 p-2 mb-8 rounded-lg">
+          <Tabs defaultValue="nasdaq" value={activeTab} onValueChange={setActiveTab} className="w-full">
+            <TabsList className="grid md:grid-cols-3 grid-cols-1 gap-2 bg-card/50 p-2 mb-8 rounded-lg">
               {experiences.map((exp) => (
                 <TabsTrigger
                   key={exp.id}
                   value={exp.id}
-                  className="interactive-element font-sans data-[state=active]:bg-neon-blue/20 data-[state=active]:text-neon-blue cursor-pointer"
-                  onClick={() => handleTabClick(exp.id)}
+                  className="interactive-element font-sans data-[state=active]:bg-neon-emerald/20 data-[state=active]:text-neon-emerald cursor-pointer"
                 >
                   {exp.company}
                 </TabsTrigger>
@@ -104,22 +74,27 @@ const ExperienceSection = () => {
             </TabsList>
             
             {experiences.map((exp) => (
-              <TabsContent key={exp.id} value={exp.id} className="bg-tech-800/20 p-6 rounded-lg border border-border">
+              <TabsContent key={exp.id} value={exp.id} className="bg-card/20 p-6 rounded-lg border border-border">
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-xl font-bold flex flex-wrap items-center gap-2 font-sans">
+                    <h3 className="text-xl font-bold flex flex-wrap items-center gap-2 font-sans text-foreground">
                       {exp.title} 
-                      <span className="text-neon-blue">@</span>
+                      <span className="text-neon-emerald">@</span>
                       <a
                         href={exp.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="interactive-element text-neon-blue hover:underline"
+                        className="interactive-element text-neon-emerald hover:underline"
                       >
                         {exp.company}
                       </a>
                     </h3>
-                    <p className="text-gray-400 font-mono text-sm">
+                    {'badge' in exp && exp.badge && (
+                      <span className="inline-block mt-1 px-3 py-1 bg-neon-gold/20 text-neon-gold text-xs font-mono rounded-full border border-neon-gold/30">
+                        {exp.badge}
+                      </span>
+                    )}
+                    <p className="text-muted-foreground font-mono text-sm mt-1">
                       {exp.period} | {exp.location}
                     </p>
                   </div>
@@ -133,25 +108,10 @@ const ExperienceSection = () => {
                         className="flex items-start font-sans"
                         delay={i * 200}
                       >
-                        <span className="text-neon-blue inline-block mr-3 mt-1.5">▹</span>
+                        <span className="text-neon-emerald inline-block mr-3 mt-1.5">▹</span>
                       </AnimatedText>
                     ))}
                   </ul>
-                  
-                  <div className="pt-3">
-                    <a
-                      href={exp.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="interactive-element text-sm text-neon-blue hover:underline inline-flex items-center gap-1 font-sans"
-                    >
-                      Link
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M7 17L17 7"/>
-                        <path d="M7 7h10v10"/>
-                      </svg>
-                    </a>
-                  </div>
                 </div>
               </TabsContent>
             ))}

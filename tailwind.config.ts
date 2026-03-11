@@ -54,21 +54,24 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				tech: {
-					100: '#E4F0FF',
-					200: '#ADC8FF',
-					300: '#7B9EFF',
-					400: '#4D77FF',
-					500: '#2952E3',
-					600: '#1E3CAD',
-					700: '#162A7A',
-					800: '#0F1D54',
-					900: '#0A1232',
+					100: '#D1FAE5',
+					200: '#A7F3D0',
+					300: '#6EE7B7',
+					400: '#34D399',
+					500: '#10B981',
+					600: '#059669',
+					700: '#0F2A1F',
+					800: '#0A1F17',
+					900: '#061210',
 				},
 				neon: {
-					purple: '#B026FF',
-					blue: '#4D9FFF',
-					pink: '#FF2ECD',
+					emerald: '#10B981',
+					gold: '#F59E0B',
+					cyan: '#06B6D4',
 					green: '#00FF7F',
+					purple: '#8B5CF6',
+					blue: '#10B981',
+					pink: '#F59E0B',
 				}
 			},
 			borderRadius: {
@@ -100,18 +103,10 @@ export default {
           '50%': { transform: 'translateY(-10px)' }
         },
         'blob': {
-          '0%': {
-            transform: 'scale(1)'
-          },
-          '33%': {
-            transform: 'scale(1.05) rotate(5deg)'
-          },
-          '66%': {
-            transform: 'scale(0.95) rotate(-5deg)'
-          },
-          '100%': {
-            transform: 'scale(1)'
-          },
+          '0%': { transform: 'scale(1)' },
+          '33%': { transform: 'scale(1.05) rotate(5deg)' },
+          '66%': { transform: 'scale(0.95) rotate(-5deg)' },
+          '100%': { transform: 'scale(1)' },
         },
         'spin-slow': {
           '0%': { transform: 'rotate(0deg)' },
@@ -142,7 +137,7 @@ export default {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'grid-pattern': 'linear-gradient(to right, rgba(77, 159, 255, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(77, 159, 255, 0.1) 1px, transparent 1px)',
+        'grid-pattern': 'linear-gradient(to right, rgba(16, 185, 129, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(16, 185, 129, 0.1) 1px, transparent 1px)',
       },
 		},
 	},

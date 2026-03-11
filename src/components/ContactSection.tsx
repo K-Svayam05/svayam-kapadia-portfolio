@@ -24,7 +24,6 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
     setTimeout(() => {
       toast.success("Message sent! I'll get back to you soon.");
       setFormData({ name: '', email: '', message: '' });
@@ -34,39 +33,38 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-20 relative overflow-hidden">
-      {/* Background elements */}
       <div className="absolute inset-0 grid-bg opacity-20"></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-neon-purple/10 rounded-full filter blur-[100px] animate-spin-slow"></div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-neon-gold/10 rounded-full filter blur-[100px] animate-spin-slow"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-2xl mx-auto text-center mb-12">
-          <span className="text-neon-blue font-mono">05. What's Next?</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">Get In Touch</h2>
+          <span className="text-neon-emerald font-mono">05. What's Next?</span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4 text-foreground">Get In Touch</h2>
           
           <AnimatedText
-            text="I'm currently open to new opportunities and collaborations. Whether you have a question, a project idea, or just want to say hi, feel free to reach out!"
+            text="I'm open to quant roles, AI engineering positions, and startup collaborations. Whether you have a project idea, a trading strategy to discuss, or just want to connect — let's talk!"
             className="text-muted-foreground"
           />
         </div>
         
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div className="bg-tech-800/30 rounded-lg p-6 border border-tech-700">
+          <div className="bg-card/30 rounded-lg p-6 border border-border">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground">Name</label>
                 <Input
                   id="name"
                   name="name"
                   placeholder="Your name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="bg-tech-700/50 border-tech-600 focus-visible:ring-neon-blue"
+                  className="bg-input border-border focus-visible:ring-neon-emerald"
                   required
                 />
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">Email</label>
                 <Input
                   id="email"
                   name="email"
@@ -74,27 +72,27 @@ const ContactSection = () => {
                   placeholder="your.email@example.com"
                   value={formData.email}
                   onChange={handleChange}
-                  className="bg-tech-700/50 border-tech-600 focus-visible:ring-neon-blue"
+                  className="bg-input border-border focus-visible:ring-neon-emerald"
                   required
                 />
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium mb-2 text-foreground">Message</label>
                 <Textarea
                   id="message"
                   name="message"
                   placeholder="Your message here..."
                   value={formData.message}
                   onChange={handleChange}
-                  className="bg-tech-700/50 border-tech-600 focus-visible:ring-neon-blue min-h-[120px]"
+                  className="bg-input border-border focus-visible:ring-neon-emerald min-h-[120px]"
                   required
                 />
               </div>
               
               <Button 
                 type="submit" 
-                className="w-full bg-gradient-to-r from-neon-blue to-neon-purple hover:opacity-90 transition-opacity text-white"
+                className="w-full bg-gradient-to-r from-neon-emerald to-neon-cyan hover:opacity-90 transition-opacity text-background font-semibold"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -106,76 +104,64 @@ const ContactSection = () => {
             </form>
           </div>
           
-          <div className="bg-tech-800/30 rounded-lg p-6 border border-tech-700 flex flex-col">
-            <h3 className="text-xl font-bold mb-4">Contact Information</h3>
+          <div className="bg-card/30 rounded-lg p-6 border border-border flex flex-col">
+            <h3 className="text-xl font-bold mb-4 text-foreground">Contact Information</h3>
             
             <div className="space-y-4 flex-grow">
-              <AnimatedText
-                text=""
-                className="flex items-center"
-                delay={100}
-              >
+              <AnimatedText text="" className="flex items-center" delay={100}>
                 <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-neon-blue/10 flex items-center justify-center mr-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neon-blue">
+                  <div className="w-10 h-10 rounded-full bg-neon-emerald/10 flex items-center justify-center mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neon-emerald">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Phone</p>
-                    <a href="tel:+918320094646" className="interactive-element text-neon-blue hover:underline">+91 8320094646</a>
+                    <p className="text-sm text-muted-foreground">Phone</p>
+                    <a href="tel:+918320094646" className="interactive-element text-neon-emerald hover:underline">+91 8320094646</a>
                   </div>
                 </div>
               </AnimatedText>
               
-              <AnimatedText
-                text=""
-                className="flex items-center"
-                delay={300}
-              >
+              <AnimatedText text="" className="flex items-center" delay={300}>
                 <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-neon-blue/10 flex items-center justify-center mr-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neon-blue">
+                  <div className="w-10 h-10 rounded-full bg-neon-emerald/10 flex items-center justify-center mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neon-emerald">
                       <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Email</p>
-                    <a href="mailto:svayamkapadia.work@gmail.com" className="interactive-element text-neon-blue hover:underline">svayamkapadia.work@gmail.com</a>
+                    <p className="text-sm text-muted-foreground">Email</p>
+                    <a href="mailto:svayamkapadia.work@gmail.com" className="interactive-element text-neon-emerald hover:underline">svayamkapadia.work@gmail.com</a>
                   </div>
                 </div>
               </AnimatedText>
               
-              <AnimatedText
-                text=""
-                className="flex items-center"
-                delay={500}
-              >
+              <AnimatedText text="" className="flex items-center" delay={500}>
                 <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-neon-blue/10 flex items-center justify-center mr-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neon-blue">
+                  <div className="w-10 h-10 rounded-full bg-neon-emerald/10 flex items-center justify-center mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neon-emerald">
                       <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"></path>
                       <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"></path>
                       <path d="M12 3v6"></path>
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Location</p>
-                    <p>Maharashtra, India</p>
+                    <p className="text-sm text-muted-foreground">Location</p>
+                    <p className="text-foreground">Maharashtra, India</p>
                   </div>
                 </div>
               </AnimatedText>
             </div>
             
-            <div className="mt-6 pt-6 border-t border-tech-700">
-              <h4 className="font-medium mb-4">Connect with me</h4>
+            <div className="mt-6 pt-6 border-t border-border">
+              <h4 className="font-medium mb-4 text-foreground">Connect with me</h4>
               <div className="flex space-x-4">
                 <a 
                   href="https://www.linkedin.com/in/svayam-kapadia-78218b246/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="interactive-element w-10 h-10 rounded-full bg-tech-700 flex items-center justify-center text-white hover:bg-neon-blue/20 hover:text-neon-blue transition-colors duration-300"
+                  className="interactive-element w-10 h-10 rounded-full bg-tech-700 flex items-center justify-center text-foreground hover:bg-neon-emerald/20 hover:text-neon-emerald transition-colors duration-300"
                   aria-label="LinkedIn"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
@@ -186,7 +172,7 @@ const ContactSection = () => {
                   href="https://github.com/K-Svayam05" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="interactive-element w-10 h-10 rounded-full bg-tech-700 flex items-center justify-center text-white hover:bg-neon-blue/20 hover:text-neon-blue transition-colors duration-300"
+                  className="interactive-element w-10 h-10 rounded-full bg-tech-700 flex items-center justify-center text-foreground hover:bg-neon-emerald/20 hover:text-neon-emerald transition-colors duration-300"
                   aria-label="GitHub"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
@@ -197,7 +183,7 @@ const ContactSection = () => {
                   href="https://www.codechef.com/users/svayam_05" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="interactive-element w-10 h-10 rounded-full bg-tech-700 flex items-center justify-center text-white hover:bg-neon-blue/20 hover:text-neon-blue transition-colors duration-300"
+                  className="interactive-element w-10 h-10 rounded-full bg-tech-700 flex items-center justify-center text-foreground hover:bg-neon-emerald/20 hover:text-neon-emerald transition-colors duration-300"
                   aria-label="CodeChef"
                 >
                   <span className="font-bold text-sm">CC</span>
@@ -206,7 +192,7 @@ const ContactSection = () => {
                   href="https://leetcode.com/u/svayam_05/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="interactive-element w-10 h-10 rounded-full bg-tech-700 flex items-center justify-center text-white hover:bg-neon-blue/20 hover:text-neon-blue transition-colors duration-300"
+                  className="interactive-element w-10 h-10 rounded-full bg-tech-700 flex items-center justify-center text-foreground hover:bg-neon-emerald/20 hover:text-neon-emerald transition-colors duration-300"
                   aria-label="LeetCode"
                 >
                   <span className="font-bold text-sm">LC</span>

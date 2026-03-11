@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import AnimatedText from './AnimatedText';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -6,12 +6,12 @@ const SkillItem = ({ name, level }: { name: string; level: number }) => {
   return (
     <div className="mb-4">
       <div className="flex justify-between mb-1">
-        <span className="font-medium">{name}</span>
-        <span className="text-sm text-gray-400">{level}%</span>
+        <span className="font-medium text-foreground">{name}</span>
+        <span className="text-sm text-muted-foreground">{level}%</span>
       </div>
       <div className="h-2 bg-tech-700 rounded-full overflow-hidden">
         <div 
-          className="h-full bg-gradient-to-r from-neon-blue to-neon-purple rounded-full"
+          className="h-full bg-gradient-to-r from-neon-emerald to-neon-gold rounded-full"
           style={{ width: `${level}%`, transition: 'width 1s ease-in-out' }}
         ></div>
       </div>
@@ -25,81 +25,79 @@ const SkillsSection = () => {
       id: 'languages',
       title: 'Languages',
       skills: [
-        { name: 'JavaScript/TypeScript', level: 95 },
-        { name: 'Python', level: 90 },
+        { name: 'Python', level: 95 },
+        { name: 'C++', level: 90 },
+        { name: 'TypeScript / JavaScript (ES6+)', level: 90 },
         { name: 'Java', level: 85 },
-        { name: 'C/C++', level: 80 },
-        { name: 'SQL', level: 85 },
-        { name: 'HTML/CSS', level: 95 },
+        { name: 'SQL (PostgreSQL, MySQL)', level: 90 },
+        { name: 'C', level: 80 },
+      ]
+    },
+    {
+      id: 'aiml',
+      title: 'AI/ML & Quantitative',
+      skills: [
+        { name: 'High-Frequency Trading (HFT)', level: 85 },
+        { name: 'Generative AI & LLMs', level: 92 },
+        { name: 'RAG & Vector Search', level: 90 },
+        { name: 'PyTorch & TensorFlow', level: 80 },
+        { name: 'Statistical Modeling', level: 85 },
+        { name: 'Scikit-learn', level: 88 },
+      ]
+    },
+    {
+      id: 'cloud',
+      title: 'Cloud & DevOps',
+      skills: [
+        { name: 'Docker & Kubernetes', level: 85 },
+        { name: 'Ansible & Jenkins CI/CD', level: 82 },
+        { name: 'Oracle Cloud (OCI)', level: 80 },
+        { name: 'AWS', level: 78 },
+        { name: 'Linux Server', level: 88 },
+        { name: 'Distributed Systems', level: 82 },
       ]
     },
     {
       id: 'frameworks',
-      title: 'Frameworks',
+      title: 'Web & Backend',
       skills: [
-        { name: 'React.js', level: 95 },
-        { name: 'Next.js', level: 90 },
-        { name: 'Node.js', level: 85 },
-        { name: 'Express.js', level: 85 },
-        { name: 'TensorFlow', level: 75 },
-        { name: 'PyTorch', level: 70 },
-      ]
-    },
-    {
-      id: 'tools',
-      title: 'Tools & Databases',
-      skills: [
-        { name: 'MongoDB', level: 88 },
-        { name: 'PostgreSQL', level: 85 },
-        { name: 'Git/GitHub', level: 92 },
-        { name: 'AWS/GCP', level: 80 },
-        { name: 'Framer', level: 85 },
-        { name: 'Postman', level: 90 },
-      ]
-    },
-    {
-      id: 'emerging',
-      title: 'Emerging Tech',
-      skills: [
-        { name: 'Generative AI (LLMs)', level: 88 },
-        { name: 'Blockchain', level: 70 },
-        { name: 'Quantum Computing', level: 65 },
-        { name: 'AI Agents', level: 80 },
-        { name: 'Cybersecurity', level: 75 },
+        { name: 'React.js & Next.js', level: 92 },
+        { name: 'Node.js & Express.js', level: 88 },
+        { name: 'Flask & FastAPI', level: 85 },
+        { name: 'Microservices Architecture', level: 82 },
       ]
     }
   ];
 
   const achievements = [
-    { title: 'Gold Level', description: 'WorldQuant University' },
-    { title: 'AIR-4', description: 'Naukri Campus EROH \'25' },
-    { title: 'Winner', description: 'SIH 2024' },
-    { title: 'Semifinalist', description: 'Tata Imagination Challenge \'24' },
-    { title: 'Global Rank 87', description: 'CodeChef Starters 148' },
+    { title: 'National Winner (1st / 20,000+)', description: 'Smart India Hackathon (SIH) 2024' },
+    { title: 'All India Rank 4 (Top 0.02%)', description: 'Naukri Campus EROH 2025' },
+    { title: 'Gold-Level Quant Researcher', description: 'WorldQuant' },
+    { title: 'Global Rank 52', description: 'CodeChef Starters 191' },
+    { title: 'Open Source Contributor', description: 'GSSoC \'24 — 5+ repos optimized' },
   ];
 
   return (
     <section id="skills" className="py-20 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-neon-blue/10 rounded-full filter blur-[80px] animate-blob"></div>
+      <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-neon-emerald/10 rounded-full filter blur-[80px] animate-blob"></div>
       
       <div className="container mx-auto px-4">
         <div className="flex items-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
-            <span className="text-neon-blue font-mono mr-2">04.</span> Skills & Achievements
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+            <span className="text-neon-emerald font-mono mr-2">04.</span> Skills & Achievements
           </h2>
-          <div className="h-px bg-gradient-to-r from-neon-blue to-transparent flex-grow ml-4"></div>
+          <div className="h-px bg-gradient-to-r from-neon-emerald to-transparent flex-grow ml-4"></div>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className="md:col-span-2">
             <Tabs defaultValue="languages" className="w-full">
-              <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 bg-tech-800/50 p-2 mb-8 rounded-lg">
+              <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 bg-card/50 p-2 mb-8 rounded-lg">
                 {skillCategories.map((category) => (
                   <TabsTrigger
                     key={category.id}
                     value={category.id}
-                    className="interactive-element data-[state=active]:bg-neon-blue/20 data-[state=active]:text-neon-blue"
+                    className="interactive-element data-[state=active]:bg-neon-emerald/20 data-[state=active]:text-neon-emerald"
                   >
                     {category.title}
                   </TabsTrigger>
@@ -108,8 +106,8 @@ const SkillsSection = () => {
               
               {skillCategories.map((category) => (
                 <TabsContent key={category.id} value={category.id} className="p-1">
-                  <div className="bg-tech-800/20 p-6 rounded-lg border border-border">
-                    <h3 className="text-xl font-bold text-white mb-6">{category.title}</h3>
+                  <div className="bg-card/20 p-6 rounded-lg border border-border">
+                    <h3 className="text-xl font-bold text-foreground mb-6">{category.title}</h3>
                     <div className="grid md:grid-cols-2 gap-x-8">
                       {category.skills.map((skill, index) => (
                         <AnimatedText 
@@ -128,9 +126,9 @@ const SkillsSection = () => {
           </div>
           
           <div>
-            <div className="bg-tech-800/30 p-6 rounded-lg border border-border h-full">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center">
-                <span className="text-neon-green mr-2">
+            <div className="bg-card/30 p-6 rounded-lg border border-border h-full">
+              <h3 className="text-xl font-bold text-foreground mb-6 flex items-center">
+                <span className="text-neon-gold mr-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M8.21 13.89L7 23l7-4 7 4-1.21-9.11"></path>
                     <path d="M15 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"></path>
@@ -150,14 +148,14 @@ const SkillsSection = () => {
                     <div className="relative">
                       <div className="flex items-start">
                         <div className="mr-4">
-                          <div className="w-3 h-3 rounded-full bg-neon-purple"></div>
+                          <div className="w-3 h-3 rounded-full bg-neon-gold"></div>
                           {index !== achievements.length - 1 && (
-                            <div className="w-0.5 h-full bg-gradient-to-b from-neon-purple to-transparent absolute ml-1.5 mt-3"></div>
+                            <div className="w-0.5 h-full bg-gradient-to-b from-neon-gold to-transparent absolute ml-1.5 mt-3"></div>
                           )}
                         </div>
                         <div>
-                          <h4 className="font-bold">{achievement.title}</h4>
-                          <p className="text-gray-400">{achievement.description}</p>
+                          <h4 className="font-bold text-foreground">{achievement.title}</h4>
+                          <p className="text-muted-foreground">{achievement.description}</p>
                         </div>
                       </div>
                     </div>
@@ -165,31 +163,19 @@ const SkillsSection = () => {
                 ))}
               </div>
               
-              <div className="mt-8 pt-6 border-t border-tech-700">
-                <h4 className="font-bold mb-3">Coding Profiles</h4>
+              <div className="mt-8 pt-6 border-t border-border">
+                <h4 className="font-bold mb-3 text-foreground">Coding Profiles</h4>
                 <div className="flex flex-wrap gap-3">
-                  <a
-                    href="https://www.codechef.com/users/svayam_05"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="interactive-element px-4 py-2 bg-tech-700 rounded-md text-sm hover:bg-tech-600 transition-colors duration-300"
-                  >
+                  <a href="https://www.codechef.com/users/svayam_05" target="_blank" rel="noopener noreferrer"
+                    className="interactive-element px-4 py-2 bg-tech-700 rounded-md text-sm hover:bg-neon-emerald/20 hover:text-neon-emerald transition-colors duration-300">
                     CodeChef
                   </a>
-                  <a
-                    href="https://leetcode.com/u/svayam_05/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="interactive-element px-4 py-2 bg-tech-700 rounded-md text-sm hover:bg-tech-600 transition-colors duration-300"
-                  >
+                  <a href="https://leetcode.com/u/svayam_05/" target="_blank" rel="noopener noreferrer"
+                    className="interactive-element px-4 py-2 bg-tech-700 rounded-md text-sm hover:bg-neon-emerald/20 hover:text-neon-emerald transition-colors duration-300">
                     LeetCode
                   </a>
-                  <a
-                    href="https://codeforces.com/profile/svayam.005"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="interactive-element px-4 py-2 bg-tech-700 rounded-md text-sm hover:bg-tech-600 transition-colors duration-300"
-                  >
+                  <a href="https://codeforces.com/profile/svayam.005" target="_blank" rel="noopener noreferrer"
+                    className="interactive-element px-4 py-2 bg-tech-700 rounded-md text-sm hover:bg-neon-emerald/20 hover:text-neon-emerald transition-colors duration-300">
                     Codeforces
                   </a>
                 </div>
@@ -199,8 +185,8 @@ const SkillsSection = () => {
         </div>
         
         <div>
-          <h3 className="text-xl font-bold text-white mb-6 flex items-center">
-            <span className="text-neon-blue mr-2">
+          <h3 className="text-xl font-bold text-foreground mb-6 flex items-center">
+            <span className="text-neon-emerald mr-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect width="18" height="18" x="3" y="3" rx="2"></rect>
                 <path d="M7 7h.01"></path>
@@ -214,26 +200,20 @@ const SkillsSection = () => {
             Certifications
           </h3>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-4">
             {[
-              'Introduction to LLMs (Google Cloud)',
-              'Full Stack Web Development (Skill India NSDC)',
-              'Introduction to AI Fundamentals (IBM & Coursera)',
-              'CyberSecurity (ADBI E-Learning)'
+              'Advanced Generative AI for Developers (Google Cloud)',
+              'Windows Server Administrator (Udemy)',
             ].map((cert, index) => (
-              <AnimatedText 
-                key={index} 
-                text="" 
-                delay={index * 100}
-              >
-                <div className="bg-tech-800/20 p-4 rounded-lg border border-tech-700">
+              <AnimatedText key={index} text="" delay={index * 100}>
+                <div className="bg-card/20 p-4 rounded-lg border border-border">
                   <div className="flex items-start">
-                    <div className="min-w-6 h-6 rounded-full bg-neon-green/20 flex items-center justify-center mr-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neon-green">
+                    <div className="min-w-6 h-6 rounded-full bg-neon-emerald/20 flex items-center justify-center mr-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neon-emerald">
                         <path d="M20 6 9 17l-5-5"></path>
                       </svg>
                     </div>
-                    <p>{cert}</p>
+                    <p className="text-foreground">{cert}</p>
                   </div>
                 </div>
               </AnimatedText>
