@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Menu, ChevronDown } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Menu } from "lucide-react";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
