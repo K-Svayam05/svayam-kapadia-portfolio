@@ -114,27 +114,15 @@ const NavBar = () => {
               </a>
             ))}
             
-            <div className="mt-4 space-y-2">
-              <p className="text-gray-400 text-sm">Download Resume:</p>
-              <a 
-                href="https://drive.google.com/file/d/1uqmrHSmFx5B9jYL-ne-cA9YfUHo7svJX/view?usp=sharing" 
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={toggleMobileMenu}
-                className="interactive-element block text-center px-4 py-2 border border-neon-blue text-neon-blue rounded hover:bg-neon-blue/10 transition-all duration-300 font-sans"
-              >
-                Software Engineer
-              </a>
-              <a 
-                href="https://drive.google.com/file/d/14ShgDopO1KW1K8mFStmiwdGv-rlAqDY1/view?usp=sharing" 
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={toggleMobileMenu}
-                className="interactive-element block text-center px-4 py-2 border border-neon-purple text-neon-purple rounded hover:bg-neon-purple/10 transition-all duration-300 font-sans"
-              >
-                Quant Engineer
-              </a>
-            </div>
+            <a 
+              href="https://drive.google.com/file/d/1N7C7axx3-bgxmkEIjA4SMDpy_1lbPopb/view?usp=sharing" 
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={toggleMobileMenu}
+              className="interactive-element block text-center px-4 py-2 border border-neon-blue text-neon-blue rounded hover:bg-neon-blue/10 transition-all duration-300 font-sans mt-4"
+            >
+              Resume
+            </a>
           </div>
         </div>
       </div>
