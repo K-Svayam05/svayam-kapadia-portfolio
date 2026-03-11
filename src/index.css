@@ -7,33 +7,33 @@
 
 @layer base {
   :root {
-    --background: 223 71% 5%;
-    --foreground: 210 40% 98%;
+    --background: 220 30% 5%;
+    --foreground: 45 20% 95%;
 
-    --card: 222 47% 10%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 25% 9%;
+    --card-foreground: 45 20% 95%;
 
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 25% 10%;
+    --popover-foreground: 45 20% 95%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 160 84% 39%;
+    --primary-foreground: 220 30% 5%;
 
-    --secondary: 260 73% 56%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 43 96% 56%;
+    --secondary-foreground: 220 30% 5%;
 
-    --muted: 223 47% 15%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 220 20% 14%;
+    --muted-foreground: 220 15% 60%;
 
-    --accent: 260 73% 56%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 43 96% 56%;
+    --accent-foreground: 220 30% 5%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 45 20% 95%;
 
-    --border: 215 27% 30%;
-    --input: 217 33% 20%;
-    --ring: 224 76% 48%;
+    --border: 220 20% 22%;
+    --input: 220 25% 16%;
+    --ring: 160 84% 39%;
 
     --radius: 0.5rem;
   }
@@ -54,19 +54,19 @@
 
 @layer components {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-emerald via-neon-gold to-neon-cyan;
   }
   
   .text-glow {
-    @apply text-neon-blue drop-shadow-[0_0_5px_rgba(77,159,255,0.5)];
+    @apply text-neon-emerald drop-shadow-[0_0_5px_rgba(16,185,129,0.5)];
   }
   
   .neon-border {
-    @apply border-2 border-neon-blue shadow-[0_0_10px_rgba(77,159,255,0.5)];
+    @apply border-2 border-neon-emerald shadow-[0_0_10px_rgba(16,185,129,0.5)];
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(77,159,255,0.3)];
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(16,185,129,0.3)];
   }
   
   .reveal {
@@ -92,7 +92,7 @@
   left: 0;
   width: 8px;
   height: 8px;
-  background-color: theme('colors.neon.blue');
+  background-color: theme('colors.neon.emerald');
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -106,7 +106,7 @@
   left: 0;
   width: 40px;
   height: 40px;
-  border: 2px solid rgba(77, 159, 255, 0.5);
+  border: 2px solid rgba(16, 185, 129, 0.5);
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -119,5 +119,5 @@
 .btn-hover .cursor-outline {
   width: 80px;
   height: 80px;
-  background-color: rgba(77, 159, 255, 0.1);
+  background-color: rgba(16, 185, 129, 0.1);
 }

@@ -3,27 +3,27 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-tech-900 py-8 border-t border-tech-800">
+    <footer className="bg-background py-8 border-t border-border">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <div className="flex items-center">
               <div className="relative mr-2">
                 <span className="text-xl font-mono font-bold text-glow">SK</span>
-                <span className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-neon-purple rounded-full"></span>
+                <span className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-neon-gold rounded-full"></span>
               </div>
-              <span className="text-gray-400 text-sm">© {new Date().getFullYear()} Svayam Kapadia</span>
+              <span className="text-muted-foreground text-sm">© {new Date().getFullYear()} Svayam Kapadia</span>
             </div>
           </div>
           
           <div className="text-center md:text-right">
-            <p className="text-sm text-gray-400 mb-2">Designed & Built with ❤️</p>
+            <p className="text-sm text-muted-foreground mb-2">Designed & Built with ❤️</p>
             <div className="flex justify-center md:justify-end space-x-4">
               <a 
                 href="https://www.linkedin.com/in/svayam-kapadia-78218b246/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="interactive-element text-gray-400 hover:text-neon-blue transition-colors duration-300"
+                className="interactive-element text-muted-foreground hover:text-neon-emerald transition-colors duration-300"
                 aria-label="LinkedIn"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
@@ -34,7 +34,7 @@ const Footer = () => {
                 href="https://github.com/K-Svayam05" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="interactive-element text-gray-400 hover:text-neon-blue transition-colors duration-300"
+                className="interactive-element text-muted-foreground hover:text-neon-emerald transition-colors duration-300"
                 aria-label="GitHub"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
@@ -43,7 +43,7 @@ const Footer = () => {
               </a>
               <a 
                 href="mailto:svayamkapadia.work@gmail.com" 
-                className="interactive-element text-gray-400 hover:text-neon-blue transition-colors duration-300"
+                className="interactive-element text-muted-foreground hover:text-neon-emerald transition-colors duration-300"
                 aria-label="Email"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
