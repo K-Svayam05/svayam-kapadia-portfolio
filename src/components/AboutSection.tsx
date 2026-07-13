@@ -42,33 +42,33 @@ const AboutSection = () => {
               </h2>
               <div className="h-px bg-gradient-to-r from-neon-emerald to-transparent flex-grow ml-4"></div>
             </div>
-            
+
             <AnimatedText
-              text="Hello! I'm Svayam Kapadia, a Computer Science student at IIIT Pune passionate about quantitative finance, AI systems, and building ventures that scale."
+              text="Software Engineer at Nomura Financial Services Group specializing in Cloud, AI/ML, and Quantitative Development for Financial Technology."
               className="mb-4 text-lg font-sans"
               highlight={true}
-              highlightWords={["quantitative finance", "AI systems"]}
+              highlightWords={["Nomura", "Quantitative Development"]}
               delay={300}
             />
             
             <AnimatedText 
-              text="I thrive at the intersection of machine intelligence and financial markets. From architecting RAG-powered chatbots at Nomura to engineering high-frequency trading algorithms, I build systems that turn complex data into actionable alpha."
+              text="Hands-on experience across cloud infrastructure, backend systems, and quantitative research — delivering measurable impact through RAG-based automation, HFT and market-regime modeling, and enterprise cloud deployments."
               className="mb-4 font-sans"
               highlight={true}
-              highlightWords={["machine intelligence", "financial markets", "actionable alpha"]}
+              highlightWords={["RAG-based automation", "HFT"]}
               delay={500}
             />
             
             <AnimatedText 
-              text="Currently interning at Nasdaq in cloud engineering while pursuing my B.Tech. My long-term vision is to launch my own AI-driven fintech startup — combining quantitative research, generative AI, and distributed systems to democratize intelligent trading."
+              text="Seeking full-time Software Engineering, Front-Office Technology, and Quantitative Developer roles at global investment banks. Long-term vision: launch my own AI-driven fintech venture."
               className="mb-4 font-sans"
               highlight={true}
-              highlightWords={["Nasdaq", "AI-driven fintech startup"]}
+              highlightWords={["Quantitative Developer", "AI-driven fintech venture"]}
               delay={700}
             />
             
             <AnimatedText
-              text="National winner of SIH 2024, All India Rank 4 on Naukri EROH, and a Gold-level Quantitative Researcher at WorldQuant — I compete hard and build harder."
+              text="Marvell M-STEM Scholar, All India Rank 4 on Naukri EROH, National Winner of SIH 2024, and a Gold-level Quantitative Researcher at WorldQuant BRAIN."
               className="font-sans"
               highlight={false}
               delay={900}
@@ -80,7 +80,7 @@ const AboutSection = () => {
                 <h4 className="font-bold font-sans text-foreground">Indian Institute of Information Technology (IIIT), Pune</h4>
                 <p className="text-muted-foreground font-sans">Bachelor of Technology in Computer Science and Engineering</p>
                 <div className="flex justify-between mt-2 font-sans">
-                  <span className="text-neon-green">9.50 CGPA</span>
+                  <span className="text-neon-green">9.45 CGPA</span>
                   <span className="text-muted-foreground">Nov. 2022 – May 2026</span>
                 </div>
               </div>
@@ -101,9 +101,9 @@ const AboutSection = () => {
                 
                 <pre className="absolute bottom-4 left-4 text-[0.6rem] text-neon-emerald opacity-50 font-mono">
                   <code>
-                    {`const quant = {
-  name: "Svayam",
-  skills: ["HFT", "RAG", "ML"],
+                    {`const engineer = {
+  role: "SWE @ Nomura",
+  stack: ["Cloud", "AI/ML", "Quant"],
   alpha: Infinity
 };`}
                   </code>

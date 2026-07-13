@@ -1,3 +1,4 @@
+
 import React from 'react';
 import AnimatedText from './AnimatedText';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -35,46 +36,58 @@ const SkillsSection = () => {
     },
     {
       id: 'aiml',
-      title: 'AI/ML & Quantitative',
+      title: 'AI/ML & Quant Finance',
       skills: [
         { name: 'High-Frequency Trading (HFT)', level: 85 },
-        { name: 'Generative AI & LLMs', level: 92 },
-        { name: 'RAG & Vector Search', level: 90 },
+        { name: 'Generative AI, LLMs & NLP', level: 92 },
+        { name: 'RAG, AI Agents & Vector Search', level: 90 },
         { name: 'PyTorch & TensorFlow', level: 80 },
-        { name: 'Statistical Modeling', level: 85 },
-        { name: 'Scikit-learn', level: 88 },
+        { name: 'Statistical Modeling & Convex Optimization', level: 85 },
+        { name: 'Pandas & Power BI', level: 88 },
       ]
     },
     {
       id: 'cloud',
       title: 'Cloud & DevOps',
       skills: [
+        { name: 'Oracle Cloud (OCI) & AWS', level: 85 },
         { name: 'Docker & Kubernetes', level: 85 },
-        { name: 'Ansible & Jenkins CI/CD', level: 82 },
-        { name: 'Oracle Cloud (OCI)', level: 80 },
-        { name: 'AWS', level: 78 },
+        { name: 'Ansible & ServiceNow', level: 80 },
+        { name: 'Jenkins CI/CD', level: 85 },
         { name: 'Linux Server', level: 88 },
         { name: 'Distributed Systems', level: 82 },
       ]
     },
     {
       id: 'frameworks',
-      title: 'Web & Backend',
+      title: 'Web & APIs',
       skills: [
         { name: 'React.js & Next.js', level: 92 },
         { name: 'Node.js & Express.js', level: 88 },
         { name: 'Flask & FastAPI', level: 85 },
-        { name: 'Microservices Architecture', level: 82 },
+        { name: 'Microservices & REST APIs', level: 85 },
       ]
     }
   ];
 
   const achievements = [
-    { title: 'National Winner (1st / 20,000+)', description: 'Smart India Hackathon (SIH) 2024' },
+    { title: 'Marvell M-STEM Scholarship (2026)', description: 'Awarded from 7,000+ students across IITs, NITs & premier institutes' },
     { title: 'All India Rank 4 (Top 0.02%)', description: 'Naukri Campus EROH 2025' },
-    { title: 'Gold-Level Quant Researcher', description: 'WorldQuant' },
-    { title: 'Global Rank 52', description: 'CodeChef Starters 191' },
+    { title: 'National Winner (1st / 20,000+)', description: 'Smart India Hackathon (SIH) 2024' },
+    { title: 'Gold-Level Quant Researcher', description: 'WorldQuant BRAIN' },
+    { title: 'High-Performance Computing', description: 'CodeChef Global Rank 52; Codeforces Specialist (1595); LeetCode 1843' },
     { title: 'Open Source Contributor', description: 'GSSoC \'24 — 5+ repos optimized' },
+  ];
+
+  const certifications = [
+    'Quantitative Finance & Algorithmic Trading (Udemy)',
+    'Oracle Cloud Infrastructure (OCI) (Udemy)',
+    'Advanced Generative AI for Developers (Google Cloud)',
+    'Kubernetes Masterclass',
+    'Terraform, Ansible & Docker',
+    'Windows Server 2025 & Citrix',
+    'SQL',
+    'IBM AI',
   ];
 
   return (
@@ -92,7 +105,7 @@ const SkillsSection = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className="md:col-span-2">
             <Tabs defaultValue="languages" className="w-full">
-              <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 bg-card/50 p-2 mb-8 rounded-lg">
+              <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 bg-card/50 p-2 mb-8 rounded-lg h-auto">
                 {skillCategories.map((category) => (
                   <TabsTrigger
                     key={category.id}
@@ -155,7 +168,7 @@ const SkillsSection = () => {
                         </div>
                         <div>
                           <h4 className="font-bold text-foreground">{achievement.title}</h4>
-                          <p className="text-muted-foreground">{achievement.description}</p>
+                          <p className="text-muted-foreground text-sm">{achievement.description}</p>
                         </div>
                       </div>
                     </div>
@@ -200,20 +213,17 @@ const SkillsSection = () => {
             Certifications
           </h3>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-4">
-            {[
-              'Advanced Generative AI for Developers (Google Cloud)',
-              'Windows Server Administrator (Udemy)',
-            ].map((cert, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {certifications.map((cert, index) => (
               <AnimatedText key={index} text="" delay={index * 100}>
-                <div className="bg-card/20 p-4 rounded-lg border border-border">
+                <div className="bg-card/20 p-4 rounded-lg border border-border h-full">
                   <div className="flex items-start">
                     <div className="min-w-6 h-6 rounded-full bg-neon-emerald/20 flex items-center justify-center mr-3">
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neon-emerald">
                         <path d="M20 6 9 17l-5-5"></path>
                       </svg>
                     </div>
-                    <p className="text-foreground">{cert}</p>
+                    <p className="text-foreground text-sm">{cert}</p>
                   </div>
                 </div>
               </AnimatedText>

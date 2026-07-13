@@ -1,3 +1,4 @@
+
 import React, { useRef } from 'react';
 import AnimatedText from './AnimatedText';
 
@@ -75,25 +76,19 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: 'Neuro-Symbolic Alpha Miner (NSAM)',
-      description: 'Autonomous quantitative research agent using RAG-based semantic chunking to extract trading rules from financial PDFs, generating executable backtest code via GPT-4. Features vectorized backtesting & HMM market regime detection with QuantLib and Eigen.',
-      tech: ['C++', 'QuantLib', 'Eigen', 'Qt6', 'CMake', 'OpenAI API'],
+      description: 'Autonomous quantitative research agent using RAG-based semantic chunking to pull trading rules from financial PDFs and generate backtest code via GPT-4. Vectorized backtesting and HMM regime detection with QuantLib and Eigen, visualized on a custom Qt6 dashboard.',
+      tech: ['C++', 'QuantLib', 'Eigen', 'Qt6', 'OpenAI API', 'HMM'],
       link: '#'
     },
     {
-      title: 'Optimal Trade Execution Strategy',
-      description: 'High-frequency trading algorithm using Lagrange Multipliers to optimize execution schedules for 50,000+ share parent orders. Processes nanosecond tick-level LOB data with Piecewise Power Law models for non-linear liquidity mapping.',
-      tech: ['Python', 'Convex Optimization', 'Databento', 'Pandas'],
-      link: '#'
-    },
-    {
-      title: 'Svayam - EdTech Chatbot',
-      description: 'Full-stack chatbot using Flask backend, React frontend, and PostgreSQL for user profile and chat history management, integrating third-party LLM APIs for advanced NLP capabilities.',
+      title: 'Svayam – EdTech AI Chatbot',
+      description: 'Full-stack chatbot serving 500+ daily users, built with a Flask REST API, React/TypeScript frontend, PostgreSQL persistence, and LLM API integration for NLP-driven tutoring.',
       tech: ['Flask', 'React', 'TypeScript', 'PostgreSQL', 'LLM APIs'],
       link: '#'
     },
     {
       title: 'Travelling Postman (SIH 2024 Winner)',
-      description: 'AI-driven distributed mail routing system integrating real-time Weather, News, and Twitter APIs, calculating safety indexes for 1000+ cities with 98% accuracy for India Post.',
+      description: 'AI-driven mail-routing system for India Post, integrating real-time Weather, News, and Twitter APIs to compute safety indexes for 1,000+ cities at 98% accuracy.',
       tech: ['Python', 'Next.js', 'PostgreSQL', 'AI/ML'],
       link: 'https://travelling-postman-3hl4.vercel.app/'
     }
@@ -112,7 +107,7 @@ const ProjectsSection = () => {
           <div className="h-px bg-gradient-to-r from-neon-emerald to-transparent flex-grow ml-4"></div>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <AnimatedText key={index} text="" className="h-full" delay={index * 200}>
               <ProjectCard 
