@@ -51,7 +51,7 @@ const NavBar = () => {
           ))}
           
           <a 
-            href="https://drive.google.com/file/d/1N7C7axx3-bgxmkEIjA4SMDpy_1lbPopb/view?usp=sharing"
+            href="https://drive.google.com/file/d/1p6LyEghu_GSFw7zzPduPoylKZIA3HlLi/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="interactive-element px-4 py-2 border border-neon-emerald text-neon-emerald rounded hover:bg-neon-emerald/10 transition-all duration-300 font-sans"
@@ -96,7 +96,7 @@ const NavBar = () => {
             ))}
             
             <a 
-              href="https://drive.google.com/file/d/1N7C7axx3-bgxmkEIjA4SMDpy_1lbPopb/view?usp=sharing" 
+              href="https://drive.google.com/file/d/1p6LyEghu_GSFw7zzPduPoylKZIA3HlLi/view?usp=sharing" 
               target="_blank"
               rel="noopener noreferrer"
               onClick={toggleMobileMenu}
