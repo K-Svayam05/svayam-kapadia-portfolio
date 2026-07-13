@@ -95,9 +95,9 @@
   background-color: theme('colors.neon.emerald');
   border-radius: 50%;
   pointer-events: none;
-  transform: translate(-50%, -50%);
   z-index: 9999;
   mix-blend-mode: difference;
+  will-change: transform;
 }
 
 .cursor-outline {
@@ -109,15 +109,24 @@
   border: 2px solid rgba(16, 185, 129, 0.5);
   border-radius: 50%;
   pointer-events: none;
-  transform: translate(-50%, -50%);
   z-index: 9998;
-  transition: all 0.15s ease;
+  transition: width 0.15s ease, height 0.15s ease, background-color 0.15s ease;
   mix-blend-mode: difference;
+  will-change: transform;
 }
 
-.link-hover .cursor-outline,
-.btn-hover .cursor-outline {
-  width: 80px;
-  height: 80px;
+.cursor-outline.link-hover {
+  width: 72px;
+  height: 72px;
   background-color: rgba(16, 185, 129, 0.1);
 }
+
+.cursor-outline.cursor-active {
+  width: 32px;
+  height: 32px;
+}
+
+@media (pointer: coarse) {
+  .cursor-dot, .cursor-outline { display: none; }
+}
+
