@@ -6,46 +6,59 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const ExperienceSection = () => {
   const experiences = [
     {
+      id: 'nomura-ft',
+      title: 'Software Engineer',
+      company: 'Nomura',
+      link: '#',
+      period: 'Jun. 2026 – Present',
+      location: 'Mumbai, India',
+      description: [
+        'Promoted to full-time Software Engineer at Nomura Financial Services Group after the SDE internship.',
+        'Driving Python automation, Power BI reporting, and applied AI initiatives for front-office analytics with the Technology team.',
+      ]
+    },
+    {
       id: 'nasdaq',
       title: 'Cloud Engineering Intern',
       company: 'Nasdaq',
       link: '#',
-      period: 'Jan. 2026 – Present',
+      period: 'Jan. 2026 – May 2026',
       location: 'Mumbai, India (Hybrid)',
+      badge: 'Internship Extension Offer Received',
       description: [
-        'Completed 8 weeks of intensive cloud infrastructure training, mastering Oracle Cloud (OCI) and Kubernetes.',
-        'Worked with foundational Ansible and Git automation workflows to support Fortune 500 FinTech environments.',
+        'Administered Oracle Cloud Infrastructure (OCI) and Kubernetes environments alongside senior engineers, supporting Fortune 500 FinTech production systems built on Docker, Linux, and Git.',
+        'Partnered with the DevOps team to streamline infrastructure provisioning and change management using Ansible and ServiceNow, speeding up CI/CD-driven deployments at enterprise scale.',
       ]
     },
     {
-      id: 'nomura',
+      id: 'nomura-intern',
       title: 'Software Development Engineering Intern',
-      company: 'Nomura',
+      company: 'Nomura (Intern)',
       link: '#',
       period: 'Jun. 2025 – Dec. 2025',
       location: 'Mumbai, India',
       badge: 'Pre-Placement Offer Received',
       description: [
-        'Architected a Retrieval-Augmented Generation (RAG) chatbot leveraging internal LLM APIs, automating real-time metadata curation and reducing risk analysis turnaround time by 40%.',
-        'Designed a normalized SQL database schema for robust data lineage tracking, resolving 100% of data consistency bottlenecks across complex upstream and downstream dependencies.',
-        'Modernized legacy CI/CD pipelines via Jenkins and optimized Python automation scripts, slashing technical debt by 25% and accelerating pipeline execution runtime by 35%.',
+        'Developed a Retrieval-Augmented Generation (RAG) chatbot with internal LLM APIs, working closely with the risk team to automate metadata curation and cut risk-analysis turnaround time by 40%.',
+        'Designed a normalized SQL schema for data lineage tracking, eliminating recurring consistency issues across upstream and downstream systems.',
+        'Modernized legacy CI/CD pipelines in Jenkins with senior engineers, cutting technical debt by 25% and speeding up pipeline execution by 35%.',
       ]
     },
     {
-      id: 'stealth',
+      id: 'billbox',
       title: 'Software Development Intern',
-      company: 'Stealth Startup',
+      company: 'Billbox AI',
       link: '#',
       period: 'Dec. 2024 – Jun. 2025',
       location: 'Remote',
       description: [
-        'Engineered scalable full-stack features utilizing modern web frameworks, boosting mobile user engagement by 25%.',
-        'Reduced frontend application load times by 15% through performance optimization and modern tooling.',
+        'Collaborated with product and design teams to ship full-stack features in React, TypeScript, and Node.js.',
+        'Grew mobile engagement by 25% and cut load times by 15%.',
       ]
     },
   ];
 
-  const [activeTab, setActiveTab] = useState('nasdaq');
+  const [activeTab, setActiveTab] = useState('nomura-ft');
 
   return (
     <section id="experience" className="py-20 relative overflow-hidden">
@@ -60,8 +73,8 @@ const ExperienceSection = () => {
         </div>
         
         <div className="max-w-4xl mx-auto">
-          <Tabs defaultValue="nasdaq" value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid md:grid-cols-3 grid-cols-1 gap-2 bg-card/50 p-2 mb-8 rounded-lg">
+          <Tabs defaultValue="nomura-ft" value={activeTab} onValueChange={setActiveTab} className="w-full">
+            <TabsList className="grid md:grid-cols-4 grid-cols-2 gap-2 bg-card/50 p-2 mb-8 rounded-lg h-auto">
               {experiences.map((exp) => (
                 <TabsTrigger
                   key={exp.id}
@@ -80,14 +93,7 @@ const ExperienceSection = () => {
                     <h3 className="text-xl font-bold flex flex-wrap items-center gap-2 font-sans text-foreground">
                       {exp.title} 
                       <span className="text-neon-emerald">@</span>
-                      <a
-                        href={exp.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="interactive-element text-neon-emerald hover:underline"
-                      >
-                        {exp.company}
-                      </a>
+                      <span className="text-neon-emerald">{exp.company}</span>
                     </h3>
                     {'badge' in exp && exp.badge && (
                       <span className="inline-block mt-1 px-3 py-1 bg-neon-gold/20 text-neon-gold text-xs font-mono rounded-full border border-neon-gold/30">
