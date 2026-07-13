@@ -1,83 +1,64 @@
-
 import React, { useEffect, useRef } from 'react';
 
 const CustomCursor = () => {
-  const cursorDotRef = useRef<HTMLDivElement>(null);
-  const cursorOutlineRef = useRef<HTMLDivElement>(null);
+  const dotRef = useRef<HTMLDivElement>(null);
+  const outlineRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
-      
-      if (cursorDotRef.current) {
-        cursorDotRef.current.style.left = `${clientX}px`;
-        cursorDotRef.current.style.top = `${clientY}px`;
-      }
-      
-      // Add a slight delay to the outline cursor for a trailing effect
-      if (cursorOutlineRef.current) {
-        setTimeout(() => {
-          cursorOutlineRef.current!.style.left = `${clientX}px`;
-          cursorOutlineRef.current!.style.top = `${clientY}px`;
-        }, 50);
-      }
+    // Disable custom cursor on touch/coarse-pointer devices for perf.
+    if (typeof window === 'undefined' || window.matchMedia('(pointer: coarse)').matches) {
+      return;
+    }
+
+    let x = 0, y = 0, ox = 0, oy = 0;
+    let raf = 0;
+
+    const loop = () => {
+      // Ease outline toward pointer for trailing effect without setTimeout.
+      ox += (x - ox) * 0.18;
+      oy += (y - oy) * 0.18;
+      if (dotRef.current) dotRef.current.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+      if (outlineRef.current) outlineRef.current.style.transform = `translate3d(${ox}px, ${oy}px, 0) translate(-50%, -50%)`;
+      raf = requestAnimationFrame(loop);
     };
 
-    const handleMouseDown = () => {
-      if (cursorOutlineRef.current) {
-        cursorOutlineRef.current.style.transform = 'translate(-50%, -50%) scale(0.9)';
-      }
-    };
+    const onMove = (e: MouseEvent) => { x = e.clientX; y = e.clientY; };
 
-    const handleMouseUp = () => {
-      if (cursorOutlineRef.current) {
-        cursorOutlineRef.current.style.transform = 'translate(-50%, -50%) scale(1)';
-      }
+    // Event delegation instead of per-element listeners + MutationObserver.
+    const isInteractive = (el: EventTarget | null) => {
+      if (!(el instanceof Element)) return false;
+      return !!el.closest('a, button, .interactive-element, input, textarea, [role="button"]');
     };
-
-    const addLinkHoverClass = () => {
-      const links = document.querySelectorAll('a, button, .interactive-element');
-      
-      links.forEach(link => {
-        link.addEventListener('mouseenter', () => {
-          cursorOutlineRef.current?.classList.add('link-hover');
-        });
-        
-        link.addEventListener('mouseleave', () => {
-          cursorOutlineRef.current?.classList.remove('link-hover');
-        });
-      });
+    const onOver = (e: MouseEvent) => {
+      if (isInteractive(e.target)) outlineRef.current?.classList.add('link-hover');
     };
+    const onOut = (e: MouseEvent) => {
+      if (isInteractive(e.target)) outlineRef.current?.classList.remove('link-hover');
+    };
+    const onDown = () => outlineRef.current?.classList.add('cursor-active');
+    const onUp = () => outlineRef.current?.classList.remove('cursor-active');
 
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mousedown', handleMouseDown);
-    document.addEventListener('mouseup', handleMouseUp);
-    
-    // Call once to initially set up events for links
-    addLinkHoverClass();
-    
-    // Set up a mutation observer to handle dynamically added links
-    const observer = new MutationObserver(() => {
-      addLinkHoverClass();
-    });
-    
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-    
+    document.addEventListener('mousemove', onMove, { passive: true });
+    document.addEventListener('mouseover', onOver, { passive: true });
+    document.addEventListener('mouseout', onOut, { passive: true });
+    document.addEventListener('mousedown', onDown);
+    document.addEventListener('mouseup', onUp);
+    raf = requestAnimationFrame(loop);
+
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mousedown', handleMouseDown);
-      document.removeEventListener('mouseup', handleMouseUp);
-      observer.disconnect();
+      cancelAnimationFrame(raf);
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseover', onOver);
+      document.removeEventListener('mouseout', onOut);
+      document.removeEventListener('mousedown', onDown);
+      document.removeEventListener('mouseup', onUp);
     };
   }, []);
 
   return (
     <>
-      <div ref={cursorDotRef} className="cursor-dot"></div>
-      <div ref={cursorOutlineRef} className="cursor-outline"></div>
+      <div ref={dotRef} className="cursor-dot" aria-hidden="true"></div>
+      <div ref={outlineRef} className="cursor-outline" aria-hidden="true"></div>
     </>
   );
 };
