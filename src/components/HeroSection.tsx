@@ -82,12 +82,12 @@ const HeroSection = () => {
           
           <div className="overflow-hidden mb-6">
             <h2 className="text-2xl md:text-4xl font-semibold text-muted-foreground animate-text-reveal" style={{ animationDelay: '400ms' }}>
-              I build intelligent systems & quantitative solutions
+              Software Engineer — Cloud, AI/ML & Quant for FinTech
             </h2>
           </div>
           
           <AnimatedText 
-            text="Quant developer and AI engineer building at the intersection of finance and machine intelligence. From high-frequency trading algorithms to RAG-powered systems, I turn complex data into alpha and automate what others do manually."
+            text="Software Engineer at Nomura building at the intersection of cloud infrastructure, AI/ML, and quantitative finance. From RAG-powered automation to HFT and market-regime modeling, I turn complex data into measurable impact for global investment banks."
             className="text-muted-foreground max-w-xl text-lg mb-8"
             delay={600}
           />
