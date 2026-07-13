@@ -16,27 +16,36 @@ const ProjectCard = ({
   index: number; 
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
-  
+  const rafRef = useRef<number | null>(null);
+  const targetRef = useRef({ rx: 0, ry: 0, s: 1 });
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
     const { left, top, width, height } = cardRef.current.getBoundingClientRect();
     const x = (e.clientX - left) / width - 0.5;
     const y = (e.clientY - top) / height - 0.5;
-    cardRef.current.style.transform = `perspective(1000px) rotateX(${y * -10}deg) rotateY(${x * 10}deg) scale3d(1.02, 1.02, 1.02)`;
+    targetRef.current = { rx: y * -8, ry: x * 8, s: 1.015 };
+    if (rafRef.current == null) {
+      rafRef.current = requestAnimationFrame(() => {
+        rafRef.current = null;
+        const { rx, ry, s } = targetRef.current;
+        if (cardRef.current)
+          cardRef.current.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(${s},${s},${s})`;
+      });
+    }
   };
-  
+
   const handleMouseLeave = () => {
     if (!cardRef.current) return;
     cardRef.current.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
   };
 
   return (
-    <div 
+    <div
       ref={cardRef}
-      className="interactive-element bg-card/50 border border-border rounded-lg p-6 transition-all duration-300 hover:border-neon-emerald"
+      className="interactive-element bg-card/50 border border-border rounded-lg p-6 transition-transform duration-200 hover:border-neon-emerald will-change-transform"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ transitionDuration: '0.2s' }}
     >
       <div className="flex items-center justify-between mb-4">
         <div className="w-10 h-10 flex items-center justify-center rounded-full bg-neon-emerald/10 text-neon-emerald font-mono">
